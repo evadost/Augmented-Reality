@@ -46,3 +46,67 @@
 </body>
 
 </html>
+
+**second deliverable**
+
+<!DOCTYPE html>
+<html>
+<script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
+<!-- we import arjs version without NFT but with marker + location based support -->
+<!--<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>-->
+<script src="build/aframe-ar.js"></script>
+
+<!-- particles system component -->
+<script
+    src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+<!-- speech command component -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.5.0/annyang.min.js"></script>
+<script src="build/aframe-speech-command-component.js"></script>
+
+
+<body style="margin : 0px; overflow: hidden;">
+    
+
+    <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+        arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;">
+
+        <a-assets>
+
+            <a-asset-item id="H" src="assets/dpsd19073H.gltf"></a-asset-item>
+            <a-asset-item id="O" src="assets/dpsd19073O.gltf"></a-asset-item>
+        </a-assets>
+
+
+<a-marker preset="marker" type="pattern" url="./assets/pattern-19073.patt">
+                    <a-image src="./assets/pattern-19073.pngs.jpg" positions="0 1 0" rotation="0 180 0"></a-image>
+                    <a-text value="Xristina Mavropoulou" positions="1 0 0 "></a-text>
+                    </a-marker>
+
+                    
+                    <a-marker id="O" type='pattern' url="./assets/19073pattern-card-O.patt">
+                    <a-entity geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5" 
+                              position="0 0 0" 
+                               
+                              animation__rotate = "property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;" >
+                    </a-entity>
+                    </a-marker> 
+
+                    
+                    <a-marker id="H" type='pattern' url="./assets/19073pattern-card-H.patt">
+                    <a-entity geometry="primitive: box; width: 0.5; height: 0.5; depth: 0.5"
+                              position="0 0 0"  
+                              animation__rotate = "property: rotation; dur: 5000; easing: linear; dir: normal; from:0 0 0; to: 0 360 0; loop: true;" >
+                    </a-entity>
+                    </a-marker> 
+
+
+        <a-entity camera></a-entity>
+    </a-scene>
+
+    </a-marker>
+
+    </a-entity>
+</body>
+
+</html>
